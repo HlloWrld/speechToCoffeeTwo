@@ -21,6 +21,9 @@ jobs:
         with:
           dotnet-version: '6.0.x'
           include-prerelease: true
+          
+      - name: npm install
+        run: cd client/ && npm install && cd ../
 
       - name: Build with dotnet
         run: dotnet build --configuration Release

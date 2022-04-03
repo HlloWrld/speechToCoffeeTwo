@@ -9,14 +9,14 @@ on:
       - master
   workflow_dispatch:
 
-        - task: Npm@1
-        inputs:
-          comand: install
-          workingDir: /ClientApp
-
 jobs:
   build:
     runs-on: ubuntu-latest
+
+            - task: Npm@1
+        inputs:
+          comand: install
+          workingDir: /ClientApp
 
     steps:
     

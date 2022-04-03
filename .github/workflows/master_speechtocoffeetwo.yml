@@ -13,16 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-            - task: Npm@1
-        inputs:
-          comand: install
-          workingDir: /ClientApp
-
     steps:
-    
       - uses: actions/checkout@v2
-
-
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
@@ -44,7 +36,7 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
- 
+          
 
   deploy:
     runs-on: ubuntu-latest

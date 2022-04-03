@@ -9,6 +9,11 @@ on:
       - master
   workflow_dispatch:
 
+        - task: Npm@1
+        inputs:
+          comand: install
+          workingDir: /ClientApp
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,10 +22,7 @@ jobs:
     
       - uses: actions/checkout@v2
 
-      - task: Npm@1
-        inputs:
-          comand: install
-          workingDir: /ClientApp
+
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
